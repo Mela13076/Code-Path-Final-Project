@@ -1,0 +1,136 @@
+#root {
+  /* max-width: 1280px; */
+  margin: 0 auto;
+ 
+  text-align: center;
+  
+}
+
+.instructions{
+  border: 2px solid #ffec1c;
+  background-color: black;
+  margin: 40px;
+}
+
+.instructions i{
+  color: #ffec1c;
+}
+
+.content h1{
+  color: #ffec1c;
+}
+
+.create{
+  align-content: center;
+}
+
+
+
+.create-content,
+.edit-content{
+  position: relative;
+  top: 120px;
+  margin: auto;
+  width: 80%;
+  border: 2px solid #ffec1c;
+  background-color: black;
+}
+
+.create-content h2,
+.edit-content h2{
+  color: #ffec1c;
+}
+
+/* form label{
+
+} */
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+  
+}
+.mini-container label span{
+  font-weight: none;
+}
+
+textarea{
+  width: 80%;
+  border-bottom: 2px solid #ffec1c
+}
+
+input[type=text] {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid #ffec1c;
+}
+
+button {
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  color: #000000;
+  font-size: 20px;
+  background: #ffec1c;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.createBtn:hover {
+  background: black;
+  color: #ffec1c;
+  text-decoration: none;
+  border: 2px solid #ffec1c;
+  cursor: pointer;
+}
+.starsBtn {
+  color: #ffec1c;
+  background: black;
+  border: 2px solid #ffec1c;
+}
+.starsBtn:hover{
+  cursor: pointer;
+}
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.charactersPage{
+  background-color: black;
+  border-radius: 8px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-bottom: 16px;
+  width: 80%px;
+  border: 2px solid #ffec1c;
+}
+
+.info .contentInfo{
+  background-color: black;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  width: 80%px;
+  border: 2px solid #ffec1c;
+}
+
+.namePage{
+  color: #ffec1c;
+}
+
+.editBtn{
+  color: black;
+}
+
+a:visited {
+  color: #ffec1c; /* Change the color of visited links */
+  text-decoration: none; /* Remove underline */
+}
