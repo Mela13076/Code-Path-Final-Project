@@ -251,6 +251,7 @@ const [commentContent, setCommentContent] = useState('');
                 <h2>{post.title}</h2>
                 <p>Posted at: {post.created_at}</p>
                 <p>Description: {post.description}</p>
+                <img src={post.image_url} alt="this is an image" width="300px" height="auto"/>
                 <p>Topic: {post.topic}</p>
                 <button className='starsBtn' onClick={() => handleUpvote(post.id, post.up_votes)}>⭐️ {post.up_votes}</button>
                 <br />

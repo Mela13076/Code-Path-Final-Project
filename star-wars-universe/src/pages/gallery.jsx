@@ -300,8 +300,8 @@ function Gallery(){
         <div className="gallery">
             <Navigation />
             <div className="content">
-                <h2>Archive History</h2>
-                <img className="logo" src={Logo} alt="star wars logo" width="95%" height="auto" />
+                <h1>Archive History</h1>
+                <img  src={Logo} alt="star wars logo"  />  
                 <div className="filter">
                     <label>
                         Sort by:

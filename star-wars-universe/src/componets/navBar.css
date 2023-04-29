@@ -1,5 +1,5 @@
 .header {
-    /* width: 80%; */
+    width: 80%;
     height: 5rem;
     display: flex;
     align-items: center;
@@ -8,7 +8,6 @@
     padding: 0 10%;
     color: black;
 }
-  
 .logo {
     font-size: 2rem;
     color: white;

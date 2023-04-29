@@ -114,7 +114,7 @@ function Edit(){
                             Products
                         </label>
                         <label>
-                            <input type="radio" name="topic" id="other" checked={post.attribute === 'other'} value="other" onChange={(e) => setPost({...post, topic: e.target.value})}/>
+                            <input type="radio" name="topic" id="other" checked={post.attribute === 'other'}  onChange={(e) => setPost({...post, topic: e.target.value})}/>
                             <span className="topic"></span>
                             Other
                         </label>
