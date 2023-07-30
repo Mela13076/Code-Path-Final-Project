@@ -1,4 +1,4 @@
-.header {
+/* .header {
     width: 80%;
     height: 5rem;
     display: flex;
@@ -40,5 +40,144 @@
 .header a:active,
 .header a.active {
     color: black;
-}
+} */
 
+
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffec1c;
+    /* background-color: #45c9c4; */
+    color: black;
+    padding: 10px;
+  
+    height: 5rem;
+    padding: 0 30px;
+    font-weight: bold;
+    box-shadow: 0 5px 20px rgba(255, 236, 28, 0.8);
+    /* box-shadow: 0 5px 20px rgba(244, 5, 193, 0.5); */
+  }
+  
+  
+  .menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  
+  }
+  
+  
+   .menu.closed ul {
+    padding: 0 10px;
+    transition: 0.3s;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    color: #ffec1c;
+  }
+  
+  .menu.open ul {
+    padding: 0 10px;
+    transition: 0.3s;
+    list-style: none;
+    
+    color: black;
+  }
+  
+  .menu li {
+    margin-left: 1rem;
+  }
+  
+  
+  .menu a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: black;
+  }
+  
+  .menu a:hover,
+  .menu a:active,
+  .menu a.active {
+    color: black;
+  }  
+  
+  
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin-bottom: 5px;
+    background-color: black;
+  }
+  
+  @media (max-width: 768px) {
+    .menu {
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 10px;
+      
+    }
+    
+  
+    .hamburger {
+      display: flex;
+    }
+  
+    .hamburger.open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+      background-color: black;
+    }
+  
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+  
+    .hamburger.open span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
+      background-color: black;
+    }
+  
+    .open {
+      display: flex;
+      flex-direction: column;
+      background-color: #ffec1c;
+      color: black;
+      /* position: absolute;
+      top: 50px;
+      right: 10px; */
+      padding: 10px;
+      border-radius: 5px;
+      border-color: black;
+      
+    }
+  
+    .open a {
+      display: block;
+      margin-bottom: 5px;
+      color: black;
+      text-decoration: none;
+  
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .menu.open ul {
+      padding: 0 10px;
+      transition: 0.3s;
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      color: black;
+    }
+  }
+  
