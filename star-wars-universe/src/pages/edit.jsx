@@ -61,7 +61,7 @@ function Edit(){
 
     return(
         <div className="edit">
-            <Navigation />
+            {/* <Navigation /> */}
             <div className="edit-content">
             <h2>Edit your Archive Post</h2>
                 {/* <img className="characterImage" src={Logo} alt="fortnite Characters" width="95%" height="auto"/> */}

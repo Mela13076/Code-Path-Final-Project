@@ -42,7 +42,7 @@ function Create(){
 
     return(
         <div className="create">
-            <Navigation />
+            {/* <Navigation /> */}
             <div className="create-content">
                 {/* <img src={Logo} alt="fortnite logo" width="auto" height="260px"/> */}
                 <h2>Create an Archive Post</h2>
@@ -71,7 +71,7 @@ function Create(){
                         <label>
                             <input type="radio" name="topic" id="movie" value="movie" required/>
                             <span className="topic"></span>
-                            Movies
+                               Movies
                         </label>
                         <label>
                             <input type="radio" name="topic" id="show" value="show" required/>

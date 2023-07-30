@@ -5,7 +5,7 @@ function Home(){
 
     return(
         <div className="home">
-            <Navigation />
+            {/* <Navigation /> */}
             <div className="content">
                 <img src={Logo} alt="starwars logo" width="auto" height="260px"/>
                 <h1>Welcome to Star Wars Universe</h1>

@@ -245,7 +245,7 @@ const [commentContent, setCommentContent] = useState('');
 
     return(
         <div className="info">
-           <Navigation />
+           {/* <Navigation /> */}
            <h1 className='namePage'>Archive Page</h1>
            <div className="contentInfo">
                 <h2>{post.title}</h2>

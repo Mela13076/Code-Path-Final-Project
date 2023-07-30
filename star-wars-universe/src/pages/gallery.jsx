@@ -298,7 +298,7 @@ function Gallery(){
 
     return (
         <div className="gallery">
-            <Navigation />
+            {/* <Navigation /> */}
             <div className="content">
                 <h1>Archive History</h1>
                 <img  src={Logo} alt="star wars logo"  />  
