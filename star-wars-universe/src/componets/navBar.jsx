@@ -35,6 +35,10 @@ function Navigation(){
     setIsMenuOpen(!isMenuOpen);
     };
 
+    const closeMenu = () => {
+        setIsMenuOpen(false);
+      };
+
     return(
     <header className="header">
         <div className="logo">
@@ -43,9 +47,9 @@ function Navigation(){
         
         <div className={`menu ${isMenuOpen ? 'open' : 'closed'}`}>
             <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/create">Create Archive</Link></li>
-                <li><Link to="/gallery">Archive History</Link></li>
+                <li><Link to="/" onClick={closeMenu}>Home</Link></li>
+                <li><Link to="/create" onClick={closeMenu}>Create Archive</Link></li>
+                <li><Link to="/gallery" onClick={closeMenu}>Archive History</Link></li>
             </ul>
         </div>
             <div className={`hamburger ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>

@@ -68,6 +68,10 @@
     align-items: center;
   
   }
+
+  .menu.open{
+    border: 2px solid black;
+  }
   
   
    .menu.closed ul {

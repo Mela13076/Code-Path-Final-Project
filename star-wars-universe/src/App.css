@@ -6,6 +6,8 @@
   
 }
 
+/********************* Home page   **********************/
+
 .instructions{
   border: 2px solid #ffec1c;
   background-color: black;
@@ -16,14 +18,20 @@
   color: #ffec1c;
 }
 
+.instructions a{
+  color: yellow;
+}
+
 .content h1{
   color: #ffec1c;
 }
 
+
+/********************* Create/Edit Page  **********************/
+
 .create{
   align-content: center;
 }
-
 
 
 .create-content,
@@ -41,9 +49,7 @@
   color: #ffec1c;
 }
 
-/* form label{
 
-} */
 
 label {
   display: block;
@@ -89,6 +95,9 @@ button {
   border: 2px solid #ffec1c;
   cursor: pointer;
 }
+
+
+/********************* gallery   **********************/
 .starsBtn {
   color: #ffec1c;
   background: black;
@@ -102,6 +111,16 @@ button {
   flex-direction: column;
   align-items: center;
 }
+
+.galleryLogo{
+  width: clamp(50%, 700px, 90%);
+  height: min(50%, 300px);
+}
+
+
+
+
+/********************* Descriptive Post Page   **********************/
 
 .charactersPage{
   background-color: black;
