@@ -59,8 +59,27 @@ label {
   margin-top: 10px;
   
 }
-.mini-container label span{
-  font-weight: none;
+.mini-container-two{
+  
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: 10%;
+  
+}
+
+.mini-container-two label {
+  display: flex;
+  margin-right: 10px; /* Add some spacing between radio inputs */
+  margin-bottom: 5px; /* Adjust the spacing between rows of radio inputs */
+}
+
+
+
+.mini-container label,
+.label{
+  text-align: left;
+  margin-left: 10%;
 }
 
 textarea{
@@ -116,8 +135,8 @@ button {
 }
 
 .galleryLogo{
-  width: clamp(50%, 700px, 90%);
-  height: min(50%, 300px);
+  width: clamp(50%, 500px, 90%);
+  /* height: min(50%, 300px); */
   
 }
 
@@ -239,6 +258,30 @@ a:visited {
 }
 
 .archive-image{
-  max-width: 70%;
-  width: 70%;
+  width: clamp(70%, 500px, 80%);
+  /* height: min(50%, 300px); */
+}
+
+.comments{
+  background-color: black;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 30px auto;
+  
+  width: 80%;
+  border: 2px solid #ffec1c;
+  position: relative;
+}
+
+.commentBundle{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+.vader{
+  background-color: white;
+  border: 2px solid #ffec1c;
+  width: 5%;
+  height: auto;
+  margin-right: 20px;
 }

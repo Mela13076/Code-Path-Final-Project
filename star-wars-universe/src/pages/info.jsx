@@ -338,6 +338,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { supabase } from '../client';
 import Edit from '../assets/edit.png'
 import Close from '../assets/close.png'
+import Vader from "../assets/darth_vader.png"
 
 
 function Info(){
@@ -349,11 +350,10 @@ function Info(){
     const [post, setPost] = useState(null);
     const [pin, setPin] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
-    const navigate = useNavigate();
-
-
     const [showLightbox, setShowLightbox] = useState(false);
-
+    const [comments, setComments] = useState([]);
+    const [newComment, setNewComment] = useState('');
+    const navigate = useNavigate();
 
 
     //fetch the data for this post from the database
@@ -366,6 +366,7 @@ function Info(){
 
             if (data.length > 0) {
                 setPost(data[0]);
+                setComments(data[0].comments);
             }
         };
         getPost().catch(console.error);
@@ -417,6 +418,32 @@ function Info(){
       const handleCloseLightbox = () => {
         setShowLightbox(false);
     };
+
+    // Function to handle adding a new comment
+  const handleAddComment = async (event) => {
+    event.preventDefault();
+    if (!newComment.trim()) {
+      setErrorMsg('Comment cannot be empty.');
+      return;
+    }
+
+    // Add the new comment to the comments array
+    const updatedComments = [...comments, newComment];
+
+    // Update the comments in the database
+    const { error } = await supabase
+      .from('stars')
+      .update({ comments: updatedComments })
+      .eq('id', id);
+
+    if (error) {
+      console.error('Error adding comment:', error);
+    } else {
+      // Clear the input field and update the comments state
+      setNewComment('');
+      setComments(updatedComments);
+    }
+  };
 
     return(
         <div className="info">
@@ -474,7 +501,22 @@ function Info(){
             </div>
                 <div className='comments'>
                     <h2>Comments</h2>
-
+                    {comments.map((comment, index) => (
+                        <div className="commentBundle" key={index}>
+                            <img src={Vader}  alt="darth vader logo" width="30px" className='vader' />
+                            <p key={index}>{comment}</p>
+                        </div>
+                    ))}
+                    <form onSubmit={handleAddComment}>
+                    <input
+                        type="text"
+                        placeholder="Add a new comment..."
+                        value={newComment}
+                        onChange={(e) => setNewComment(e.target.value)}
+                    />
+                    <button type="submit">Add Comment</button>
+                    </form>
+                    {errorMsg && <p className="errorMsg">{errorMsg}</p>}
                 </div>
 
             </div>

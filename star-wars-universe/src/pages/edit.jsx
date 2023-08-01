@@ -90,8 +90,9 @@ function Edit(){
                         <input type="text" value={post.image_url} onChange={(e) => setPost({...post, image_url: e.target.value})} id="image_url" required/>
                     </div>
                     
-                    <div className="mini-container">
-                        <label>Topic:</label>
+                    
+                        <label className="label">Topic:</label>
+                    <div className="mini-container-two">    
                         <label>
                             <input type="radio" name="topic" id="movie" checked={isCheckedTopic('movie')} value="movie" onChange={(e) => setPost({...post, topic: e.target.value})}/>
                             <span className="topic"></span>

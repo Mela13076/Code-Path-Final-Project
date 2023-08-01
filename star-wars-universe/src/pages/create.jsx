@@ -64,8 +64,9 @@ function Create(){
                         <input type="text" placeholder="enter an image url link" id="image_url" required/>
                     </div>
                     
-                    <div className="mini-container">
-                        <label>Topic:</label>
+                    
+                        <label className="label">Topic:</label>
+                    <div className="mini-container-two">    
                         <label>
                             <input type="radio" name="topic" id="movie" value="movie" required/>
                             <span className="topic"></span>
