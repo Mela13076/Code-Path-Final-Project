@@ -71,6 +71,7 @@
 
   .menu.open{
     border: 2px solid black;
+    z-index: 100;
   }
   
   

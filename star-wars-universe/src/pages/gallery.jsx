@@ -3,6 +3,7 @@ import { supabase } from '../client';
 import Navigation from '../componets/navBar';
 import { Link } from 'react-router-dom';
 import Logo from '../assets/yellow-logo.png'
+import Filter from '../assets/filter-logo.png'
 
 function Gallery(){
     
@@ -82,43 +83,61 @@ function Gallery(){
             <div className="content">
                 <h1>Archive History</h1>
                 <img  src={Logo} alt="star wars logo"  className='galleryLogo'/>  
-                <div className="filter">
-                    <label>
-                        Sort by:
-                        <select value={sortBy} onChange={handleSortByChange}>
-                            <option value="created_at">Time created</option>
-                            <option value="up_votes">Upvotes</option>
-                        </select>
-                    </label>
-                    <label>
-                        Order:
-                        <select value={sortOrder} onChange={handleSortOrderChange}>
-                            <option value="desc">Descending</option>
-                            <option value="asc">Ascending</option>
-                        </select>
-                    </label>
-                    <label>
-                        Topic:
-                        <select value={selectedTopic} onChange={handleTopicChange}>
-                            <option value="">All</option>
-                            <option value="character">Characters</option>
-                            <option value="movie">Movies</option>
-                            <option value="show">TV Series</option>
-                            <option value="game">Games</option>
-                            <option value="product">Products</option>
-                            <option value="comic">comics</option>
-                            <option value="other">other</option>
-                        </select>
-                    </label>
-                </div>
+
+
+
+               <div className="filter-container">
+                    <div className="filter-icon" onClick={toggleFilterOptions}>
+                        <img src={Filter} alt="filter icon"  height="40px"/>
+                    </div>
+                    <div className={`filter-options ${isFilterOpen ? 'open' : ''}`}>
+                        <label>
+                            Sort by:
+                            <select value={sortBy} onChange={handleSortByChange}>
+                                <option value="created_at">Time created</option>
+                                <option value="up_votes">Upvotes</option>
+                            </select>
+                        </label>
+                        <label>
+                            Order:
+                            <select value={sortOrder} onChange={handleSortOrderChange}>
+                                <option value="desc">Descending</option>
+                                <option value="asc">Ascending</option>
+                            </select>
+                        </label>
+                        <label>
+                            Topic:
+                            <select value={selectedTopic} onChange={handleTopicChange}>
+                                <option value="">All</option>
+                                <option value="character">Characters</option>
+                                <option value="movie">Movies</option>
+                                <option value="show">TV Series</option>
+                                <option value="game">Games</option>
+                                <option value="product">Products</option>
+                                <option value="comic">comics</option>
+                                <option value="other">other</option>
+                            </select>
+                        </label>
+                    </div>
+               </div>
+
+
                 <div className="post">
                     {post && post.length > 0 ? post.map((postinfo) => (
                         <div className="charactersPage" key={postinfo.id}>
                             <h3>
                                 <Link to={`/info/${postinfo.id}`}>{postinfo.title}</Link>
                             </h3>
-                                                        {/* <img src={postinfo.image_url} alt='image url ' width= "auto" height="auto" /> */}
-                                                        <p>Description: {postinfo.description}</p>
+                            <div className="card-content">
+                                <div className="image">
+                                    <img className="archive-image" src={postinfo.image_url} alt='image url ' width= "400px" height="auto" />
+                                </div>
+                                <div className="information">
+
+                                </div>
+                            </div>
+                                                        
+                            <p> {postinfo.description}</p>
                             <p className='topic-sec'>Topic: {postinfo.topic}</p>
                             
                             <button className='starsBtn' onClick={() => handleUpvote(postinfo.id, postinfo.up_votes)}>⭐️ {postinfo.up_votes}</button>

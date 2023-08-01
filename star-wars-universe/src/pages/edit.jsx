@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from 'react-router-dom';
 import { supabase } from '../client';
+import {useNavigate} from 'react-router-dom'
 import Navigation from "../componets/navBar";
 import Logo from "../assets/yellow-logo.png"
 
@@ -11,6 +12,11 @@ function Edit(){
 
     //set up state variables
     const [post, setPost] = React.useState(null);
+    const navigate = useNavigate();
+
+    const isCheckedTopic = (topic) => {
+        return post.topic === topic;
+      };
 
     //fetch the crewmate from the database
     React.useEffect(() => {
@@ -40,7 +46,7 @@ function Edit(){
         }).eq('id', id);
 
         //redirect to the home page
-        window.location = '/gallery';
+        navigate(`/info/${id}`);
     }
 
     //delete the crewmate
@@ -51,7 +57,8 @@ function Edit(){
         await supabase.from('stars').delete().eq('id', id);
 
         //redirect to the home page
-        window.location = '/gallery';
+        // window.location = 'gallery';
+        navigate(`/info/${id}`);
     }
 
     if (!post) {
@@ -61,9 +68,11 @@ function Edit(){
 
     return(
         <div className="edit">
-            {/* <Navigation /> */}
+            
+            <h1 className="namePage">Editing your Archive Post...</h1>
+            
             <div className="edit-content">
-            <h2>Edit your Archive Post</h2>
+                <h2><i>May the Force guide your edits</i></h2>
                 {/* <img className="characterImage" src={Logo} alt="fortnite Characters" width="95%" height="auto"/> */}
                 <form onSubmit={updatePost}>
                 <div className="mini-container">
@@ -73,7 +82,7 @@ function Edit(){
 
                     <div className="mini-container">
                         <label>Description:</label>
-                         <textarea onChange={(e) => setPost({...post, description: e.target.value})} value={post.description} id="description"  width="80%" required/>
+                        <input type="text" onChange={(e) => setPost({...post, description: e.target.value})} value={post.description} id="description"  width="80%" required/>
   
                     </div>
                     <div className="mini-container">
@@ -82,39 +91,39 @@ function Edit(){
                     </div>
                     
                     <div className="mini-container">
-                        <label>Character:</label>
+                        <label>Topic:</label>
                         <label>
-                            <input type="radio" name="topic" id="movie" checked={post.movie === 'captain'} value="movie" onChange={(e) => setPost({...post, topic: e.target.value})}/>
+                            <input type="radio" name="topic" id="movie" checked={isCheckedTopic('movie')} value="movie" onChange={(e) => setPost({...post, topic: e.target.value})}/>
                             <span className="topic"></span>
                             Movies
                         </label>
                         <label>
-                            <input type="radio" name="topic" id="show" checked={post.attribute === 'show'} value="show" onChange={(e) => setPost({...post, topic: e.target.value})}/>
+                            <input type="radio" name="topic" id="show" checked={isCheckedTopic('show')} value="show" onChange={(e) => setPost({...post, topic: e.target.value})}/>
                             <span className="topic"></span>
                             TV Series
                         </label>
                         <label>
-                            <input type="radio" name="topic" id="comic" checked={post.attribute === 'comic'} value="comic" onChange={(e) => setPost({...post, topic: e.target.value})}/>
+                            <input type="radio" name="topic" id="comic" checked={isCheckedTopic('comic')} value="comic" onChange={(e) => setPost({...post, topic: e.target.value})}/>
                             <span className="topic"></span>
                             Comics
                         </label>
                         <label>
-                            <input type="radio" name="topic" id="game" checked={post.attribute === 'game'} value="game" onChange={(e) => setPost({...post, topic: e.target.value})}/>
+                            <input type="radio" name="topic" id="game" checked={isCheckedTopic('game')} value="game" onChange={(e) => setPost({...post, topic: e.target.value})}/>
                             <span className="topic"></span>
                             Games
                         </label>
                         <label>
-                            <input type="radio" name="topic" id="character" checked={post.attribute === 'character'} value="character" onChange={(e) => setPost({...post, topic: e.target.value})}/>
+                            <input type="radio" name="topic" id="character" checked={isCheckedTopic('character')} value="character" onChange={(e) => setPost({...post, topic: e.target.value})}/>
                             <span className="topic"></span>
                             Characters
                         </label>
                         <label>
-                            <input type="radio" name="topic" id="product" checked={post.attribute === 'product'} value="product" onChange={(e) => setPost({...post, topic: e.target.value})}/>
+                            <input type="radio" name="topic" id="product" checked={isCheckedTopic('product')} value="product" onChange={(e) => setPost({...post, topic: e.target.value})}/>
                             <span className="topic"></span>
                             Products
                         </label>
                         <label>
-                            <input type="radio" name="topic" id="other" checked={post.attribute === 'other'}  onChange={(e) => setPost({...post, topic: e.target.value})}/>
+                            <input type="radio" name="topic" id="other" checked={isCheckedTopic('other')}  onChange={(e) => setPost({...post, topic: e.target.value})}/>
                             <span className="topic"></span>
                             Other
                         </label>

@@ -42,11 +42,9 @@ function Create(){
 
     return(
         <div className="create">
-            {/* <Navigation /> */}
+            <h1 className="namePage">Creating an Archive Post...</h1>
+            <h3 className="quote">The galaxy's history shall be inscribed within these archives, a testament to the enduring legacy of the Force.</h3>
             <div className="create-content">
-                {/* <img src={Logo} alt="fortnite logo" width="auto" height="260px"/> */}
-                <h2>Create an Archive Post</h2>
-                {/* <img className="characterImage" src={Characters} alt="fortnite Characters" width="95%" height="auto"/> */}
                 <form onSubmit={createPost}>
                     <div className="mini-container">
                         <label>Title:</label>
@@ -57,7 +55,7 @@ function Create(){
                         <label>Description:</label>
                         {/* <input type="text" placeholder="enter a description" id="description" required/>
                          */}
-                         <textarea placeholder="enter a description" id="description"  width="80%" required/>
+                         <input type="text" placeholder="enter a description" id="description"  width="80%" required/>
   
                     </div>
 
