@@ -499,25 +499,27 @@ function Info(){
 
                 
             </div>
+
                 <div className='comments'>
                     <h2>Comments</h2>
-                    {comments.map((comment, index) => (
+                    {comments.filter(comment => comment.trim() !== '').map((comment, index) => (
                         <div className="commentBundle" key={index}>
-                            <img src={Vader}  alt="darth vader logo" width="30px" className='vader' />
+                            <img src={Vader} alt="darth vader logo" width="30px" className='vader' />
                             <p key={index}>{comment}</p>
                         </div>
                     ))}
                     <form onSubmit={handleAddComment}>
-                    <input
-                        type="text"
-                        placeholder="Add a new comment..."
-                        value={newComment}
-                        onChange={(e) => setNewComment(e.target.value)}
-                    />
-                    <button type="submit">Add Comment</button>
+                        <input
+                            type="text"
+                            placeholder="Add a new comment..."
+                            value={newComment}
+                            onChange={(e) => setNewComment(e.target.value)}
+                        />
+                        <button type="submit">Add Comment</button>
                     </form>
                     {errorMsg && <p className="errorMsg">{errorMsg}</p>}
                 </div>
+
 
             </div>
         )

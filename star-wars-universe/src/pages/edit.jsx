@@ -58,7 +58,7 @@ function Edit(){
 
         //redirect to the home page
         // window.location = 'gallery';
-        navigate(`/info/${id}`);
+        navigate(`/gallery`);
     }
 
     if (!post) {

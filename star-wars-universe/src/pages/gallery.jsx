@@ -83,6 +83,7 @@ function Gallery(){
             <div className="content">
                 <h1>Archive History</h1>
                 <img  src={Logo} alt="star wars logo"  className='galleryLogo'/>  
+                <h2 className='galleryQuote'><i>In the vast expanse of the archives, the secrets of the galaxy lie waiting to be discovered.</i></h2>
 
 
 

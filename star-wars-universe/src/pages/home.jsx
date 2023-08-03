@@ -18,6 +18,8 @@ function Home(){
                     <br />
                     <h3>Visit the <Link to="/gallery" ><i>Archive History</i></Link> to view all Post!</h3>
                 </div>
+
+                <h3 className="homeQuote"><i>Welcome to the Archive Database, young Padawan. Here, the knowledge of the galaxy resides, waiting to be explored. May the Force guide you in your quest for wisdom and understanding. May you find the information you seek, and may your journey through these archives be filled with discoveries beyond your imagination.</i></h3>
                 {/* <img className="characterImage" src={Characters} alt="fortnite Characters" width="95%" height="auto"/> */}
             </div>
         </div>
